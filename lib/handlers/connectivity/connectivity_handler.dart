@@ -2,6 +2,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+///--------------------------------@mit------------------------------
+/// Class to handle connectivity
 class ConnectivityHandler {
   Connectivity? _connectivity;
 

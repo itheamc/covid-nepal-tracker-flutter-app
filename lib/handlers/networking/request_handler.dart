@@ -6,6 +6,8 @@ import 'package:dio/dio.dart';
 import 'network_interceptor.dart';
 import 'network_response.dart';
 
+///--------------------------------@mit------------------------------
+/// RequestHandler class to handle network requests
 class RequestHandler {
   static _defaultHeaders(contentType, endpoint) => {
         HttpHeaders.contentTypeHeader: contentType,

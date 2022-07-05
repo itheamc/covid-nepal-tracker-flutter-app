@@ -1,10 +1,6 @@
 import 'package:covid_nepal_tracker/components/a_flutter_map.dart';
-import 'package:covid_nepal_tracker/utils/marker_clipper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:get/get.dart';
-import 'package:get/get.dart';
-import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 
 class AMapView extends StatefulWidget {
@@ -34,73 +30,34 @@ class _AMapViewState extends State<AMapView> {
       onMapCreated: _onMapLoaded,
       zoom: 6.0,
       markers: [
-        Marker(
-          width: 48.0,
-          height: 48.0,
-          point: LatLng(28.407784, 81.574720),
-          builder: (_) => Stack(
-            children: [
-              Icon(
-                Icons.location_on_rounded,
-                size: 48.0,
-                color: Colors.red.shade700,
-              ),
-              Center(
-                child: Text(
-                  "5000",
-                  style: theme.textTheme.caption?.copyWith(
-                    color: Colors.white
+        LatLng(28.407784, 81.574720),
+        LatLng(28.274037, 84.354908),
+        LatLng(27.027043, 85.923840)
+      ]
+          .map(
+            (e) => Marker(
+              width: 48.0,
+              height: 48.0,
+              point: e,
+              builder: (_) => Stack(
+                children: [
+                  Icon(
+                    Icons.location_on_rounded,
+                    size: 48.0,
+                    color: Colors.red.shade700,
                   ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Marker(
-          width: 48.0,
-          height: 48.0,
-          point: LatLng(28.274037, 84.354908),
-          builder: (_) => Stack(
-            children: [
-              Icon(
-                Icons.location_on_rounded,
-                size: 48.0,
-                color: Colors.red.shade700,
-              ),
-              Center(
-                child: Text(
-                  "5000",
-                  style: theme.textTheme.caption?.copyWith(
-                    color: Colors.white
+                  Center(
+                    child: Text(
+                      "5000",
+                      style: theme.textTheme.caption
+                          ?.copyWith(color: Colors.white),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
-        ),
-        Marker(
-          width: 48.0,
-          height: 48.0,
-          point: LatLng(27.027043, 85.923840),
-          builder: (_) => Stack(
-            children: [
-              Icon(
-                Icons.location_on_rounded,
-                size: 48.0,
-                color: Colors.red.shade700,
-              ),
-              Center(
-                child: Text(
-                  "5000",
-                  style: theme.textTheme.caption?.copyWith(
-                    color: Colors.white
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
+            ),
+          )
+          .toList(),
     );
   }
 

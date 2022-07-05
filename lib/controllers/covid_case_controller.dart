@@ -7,6 +7,9 @@ import '../handlers/networking/request_handler.dart';
 import '../handlers/networking/urls.dart';
 import '../utils/json_parser.dart';
 
+
+///--------------------------------@mit------------------------------
+/// Controller for covid case
 class CovidCaseController extends GetxController {
   NetworkResponse? _networkResponse;
   final _covidCases = List<CovidCase>.empty(growable: true).obs;

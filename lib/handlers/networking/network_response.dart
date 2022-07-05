@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@amit----------------------------------
 /// Class For Network Response
 class NetworkResponse {
   final Response _response;
@@ -26,7 +26,7 @@ class NetworkResponse {
   );
 }
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@mit----------------------------------
 /// Success Network Response
 class SuccessResponse extends Response {
   SuccessResponse({
@@ -39,22 +39,9 @@ class SuccessResponse extends Response {
     super.redirects,
     super.extra,
   });
-
-  factory SuccessResponse.fromResponse(Response response) {
-    return SuccessResponse(
-      data: response.data,
-      requestOptions: response.requestOptions,
-      headers: response.headers,
-      isRedirect: response.isRedirect,
-      statusCode: response.statusCode,
-      statusMessage: response.statusMessage,
-      redirects: response.redirects,
-      extra: response.extra,
-    );
-  }
 }
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@mit----------------------------------
 /// Failure Network Response
 class FailureResponse extends Response {
   FailureResponse({
@@ -67,22 +54,9 @@ class FailureResponse extends Response {
     super.redirects,
     super.extra,
   });
-
-  factory FailureResponse.fromResponse(Response response) {
-    return FailureResponse(
-      data: response.data,
-      requestOptions: response.requestOptions,
-      headers: response.headers,
-      isRedirect: response.isRedirect,
-      statusCode: response.statusCode,
-      statusMessage: response.statusMessage,
-      redirects: response.redirects,
-      extra: response.extra,
-    );
-  }
 }
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@mit----------------------------------
 /// Error Network Response
 class ErrorResponse extends Response {
   ErrorResponse({
@@ -97,15 +71,15 @@ class ErrorResponse extends Response {
   });
 }
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@mit----------------------------------
 /// Network Response Type
 enum ResponseType { success, failure, error }
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@mit----------------------------------
 /// Network Request Status
 enum NetworkRequestStatus { none, requesting, completed }
 
-///---------------------------------@itheamc----------------------------------
+///---------------------------------@mit----------------------------------
 /// Extension Function
 extension ResponseExtension on Response {
   NetworkResponse toNetworkResponse() {

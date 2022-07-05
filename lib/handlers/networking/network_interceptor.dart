@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 
 import 'network_response.dart';
 
+///--------------------------------@mit------------------------------
+/// Custom Network Interceptor Class to Handle the errors
 class NetworkInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {

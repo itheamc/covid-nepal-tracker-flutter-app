@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 
 import '../handlers/connectivity/connectivity_handler.dart';
 
+///--------------------------------@mit------------------------------
+/// Controller for connectivity
 class ConnectivityController extends GetxController {
   final _hasInternet = true.obs;
   late ConnectivityHandler _handler;

@@ -1,14 +1,12 @@
 import 'package:covid_nepal_tracker/controllers/connectivity_controller.dart';
-import 'package:covid_nepal_tracker/pages/home/home_page.dart';
+import 'package:covid_nepal_tracker/handlers/routes/route_handler.dart';
+import 'package:covid_nepal_tracker/handlers/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'controllers/covid_case_controller.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.lazyPut(() => ConnectivityController());
-  Get.lazyPut(() => CovidCaseController());
   runApp(const CovidNepalTrackerApp());
 }
 
@@ -18,16 +16,18 @@ class CovidNepalTrackerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Covid Nepal - Tracker',
       theme: ThemeData(
         primarySwatch: Colors.purple,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.purple,
           shadowColor: Colors.transparent,
           elevation: 0,
         ),
       ),
-      home: const HomePage(),
+      navigatorKey: Get.key,
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routes.home,
+      onGenerateRoute: RoutesHandler.handleOnGenerateRoute,
     );
   }
 }

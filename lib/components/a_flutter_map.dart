@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
+///--------------------------------@mit------------------------------
+/// A Flutter map widget
 class AFlutterMap extends StatelessWidget {
   final LatLng center;
   final double zoom;
@@ -38,7 +40,7 @@ class AFlutterMap extends StatelessWidget {
           subdomains: ['a', 'b', 'c'],
           tileProvider: const NonCachingNetworkTileProvider(),
         ),
-        MarkerLayerOptions(markers: markers)
+        MarkerLayerOptions(markers: markers),
       ],
       nonRotatedChildren: [
         Align(
