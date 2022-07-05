@@ -48,7 +48,7 @@ class _ACovidTrackerState extends State<ACovidTracker> {
           sliver: SliverToBoxAdapter(
             child: Text(
               "Type the country name",
-              style: _theme.textTheme.labelLarge?.copyWith(
+              style: _theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: _theme.primaryColor,
               ),
