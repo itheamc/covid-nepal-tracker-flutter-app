@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Get.lazyPut(() => ConnectivityController());
   runApp(const CovidNepalTrackerApp());
 }
 
@@ -26,8 +25,13 @@ class CovidNepalTrackerApp extends StatelessWidget {
       ),
       navigatorKey: Get.key,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.home,
+      initialRoute: Routes.splash,
       onGenerateRoute: RoutesHandler.handleOnGenerateRoute,
+      initialBinding: BindingsBuilder(
+        () {
+          Get.lazyPut(() => ConnectivityController());
+        },
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:covid_nepal_tracker/controllers/covid_case_controller.dart';
 import 'package:covid_nepal_tracker/handlers/routes/routes.dart';
 import 'package:covid_nepal_tracker/pages/home/home_page.dart';
 import 'package:covid_nepal_tracker/pages/page_not_found/not_found_page.dart';
+import 'package:covid_nepal_tracker/pages/splash/splash_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,12 @@ class RoutesHandler {
     Route<dynamic> pageRoute;
 
     switch (settings.name) {
+      case Routes.splash:
+        pageRoute = GetPageRoute(
+          page: () => const SplashPage(),
+          settings: settings,
+        );
+        break;
       case Routes.home:
         pageRoute = GetPageRoute(
           page: () => const HomePage(),
@@ -40,6 +47,10 @@ class RoutesHandler {
   ///--------------------------------@mit------------------------------
   /// Method to return the get pages
   static List<GetPage<dynamic>> get routePages => [
+        GetPage(
+          name: Routes.splash,
+          page: () => const SplashPage(),
+        ),
         GetPage(
           name: Routes.home,
           page: () => const HomePage(),
