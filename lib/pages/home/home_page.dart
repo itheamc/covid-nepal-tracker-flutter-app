@@ -68,6 +68,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   void dispose() {
+    _tabController.dispose();
     super.dispose();
   }
 }
